@@ -1,0 +1,282 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  height: 100px;
+  margin-left: 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #1f2a26;
+  color: white;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+
+.nav li {
+  margin-right: 20px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  width: 25vw;
+  font-size: 2rem;
+  margin: auto;
+}
+.search-input {
+  padding: 25px;
+  width: 100%;
+  background-color: #3d919d;
+  font-size: 1.2rem;
+  border-radius: 50px 0px 0px 50px;
+  border: none;
+}
+
+.search-btn {
+  padding: 25px;
+  background-color: #3d919d;
+  border: none;
+  color: #1f2a26;
+  border-radius: 0px 10px 10px 0px;
+  font-size: 1.2rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.search-btn:hover {
+  background-color: #1f2a26;
+  color: #3d919d;
+}
+
+.body {
+  background-image: url("./src/assests/images/back_cover.png");
+  height: 80vh;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  padding-left: 400px;
+  padding-top: 90px;
+  font-size: 4rem;
+}
+
+.room-card {
+  background-color: #3d919d;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.room-card img {
+  width: 100%;
+  border-radius: 3px;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.rooms-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rooms-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menu-btn {
+  background-color: white;
+  text-decoration: none;
+  color: #3d919d;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: -40px;
+}
+
+.menu-btn:hover {
+  background-color: white;
+  color: rgb(64, 63, 63);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-btn {
+  background-color: white;
+  text-decoration: none;
+  color: #3d919d;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.auth-page input {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.cart {
+  margin: auto;
+  width: 60%;
+}
+
+.cart-card {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 20px;
+  border-bottom: 2px solid black;
+}
+.cart-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.auth-page {
+  margin-top: 100px;
+}
+
+.login {
+  width: 350px;
+}
+
+.register {
+  width: 350px;
+}
+
+.form {
+  width: 95%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+}
+
+.footer {
+  font-size: 2rem;
+  color: #3d919d;
+  background-color: #1f2a26;
+  padding: 20px;
+  text-align: center;
+}
+
+.loading {
+  background-color: #3d919d;
+  border-radius: 5px;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.check {
+  font-size: 3rem;
+  color: white;
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.user-btn {
+  background-color: #3d919d;
+  color: rgb(64, 63, 63);
+  text-decoration: none;
+  padding: 15px;
+  font-size: 1.5rem;
+  height: 10rem;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.user-btn:hover {
+  background-color: white;
+  color: rgb(64, 63, 63);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user {
+  margin: auto;
+  width: 75vw;
+}
+
+.admin-management-page-heading {
+  font-size: 5rem;
+  padding: 90px;
+  background-color: #3d919d;
+  border-radius: 30px;
+  margin-top: 30px;
+}
+
+.admin-management-page-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.admin-management-page {
+  width: 50vw;
+  margin: auto;
+}
+
+.justify-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
