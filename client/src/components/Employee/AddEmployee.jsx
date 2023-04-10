@@ -1,5 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 async function addEmployee(credentials) {
   return fetch("http://localhost:8080/add-employee", {
@@ -32,6 +34,7 @@ const validate = (values) => {
 };
 
 const AddEmployee = () => {
+  const token = useSelector((store) => store.auth.token);
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -47,6 +50,17 @@ const AddEmployee = () => {
       formik.resetForm();
     },
   });
+
+  if (token === null) {
+    return (
+      <div className="flex-row">
+        <h1>It seems that your are not logged in!</h1>
+        <Link to={"/auth"} className="nav-btn">
+          Head over here to Login
+        </Link>
+      </div>
+    );
+  }
   return (
     <div className="add-employee">
       <form onSubmit={formik.handleSubmit} className="form">

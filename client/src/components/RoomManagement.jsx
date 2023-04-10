@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import AddRoom from "./Room/AddRoom";
 import RemoveRoom from "./Room/RemoveRoom";
 import UpdateRoom from "./Room/UpdateRoom";
-import Rooms from "./Rooms";
+import GetAllRooms from "./Room/GetAllRooms";
 
 const RoomManagement = () => {
   const [addRoom, setAddRoom] = useState(false);
@@ -10,6 +12,17 @@ const RoomManagement = () => {
   const [updateRoom, setUpdateRoom] = useState(false);
   const [getAllRooms, setGetAllRooms] = useState(false);
 
+  const token = useSelector((store) => store.auth.token);
+  if (token === null) {
+    return (
+      <div className="flex-row">
+        <h1>It seems that your are not logged in!</h1>
+        <Link to={"/auth"} className="nav-btn">
+          Head over here to Login
+        </Link>
+      </div>
+    );
+  }
   const handleAddRoomClick = () => {
     setAddRoom(!addRoom);
     setRemoveRoom(false);
@@ -60,7 +73,7 @@ const RoomManagement = () => {
         {addRoom && <AddRoom />}
         {removeRoom && <RemoveRoom />}
         {updateRoom && <UpdateRoom />}
-        {getAllRooms && <Rooms />}
+        {getAllRooms && <GetAllRooms />}
       </div>
     </div>
   );

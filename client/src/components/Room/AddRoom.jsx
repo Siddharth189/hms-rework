@@ -53,7 +53,7 @@ const AddRoom = () => {
   return (
     <div className="add-employee">
       <form onSubmit={formik.handleSubmit} className="form">
-        <h2>Add Employee</h2>
+        <h2>ADD A ROOM</h2>
         <input
           id="type"
           name="type"

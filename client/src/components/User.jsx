@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import UserGetAllRoomsCard from "./UserGetAllRoomsCard";
+import AVATAR from "../assests/images/avatar.png";
 
 const User = () => {
   const { id } = useParams();
@@ -44,7 +45,7 @@ const User = () => {
     <div className="user">
       <div className="flex-row">
         <div className="user-card room-card">
-          <img src="https://via.placeholder.com/150" alt="user" />
+          <img src={AVATAR} alt="user" />
           <p>{userName}</p>
           <p>{userEmail}</p>
         </div>
@@ -76,8 +77,17 @@ const User = () => {
         )}
       </div>
       {getAllBookings &&
-        bookings?.map((bookedRoom) => (
-          <UserGetAllRoomsCard key={bookedRoom._id} {...bookedRoom} />
+        (bookings?.length === 0 ? (
+          <div className="flex-row">
+            <h1>It seems that your have not booked any room!</h1>
+            <Link to={"/rooms"} className="nav-btn">
+              Head over here to Book Rooms
+            </Link>
+          </div>
+        ) : (
+          bookings?.map((bookedRoom) => (
+            <UserGetAllRoomsCard key={bookedRoom._id} {...bookedRoom} />
+          ))
         ))}
     </div>
   );

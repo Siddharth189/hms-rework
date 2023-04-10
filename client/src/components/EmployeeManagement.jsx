@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import AddEmployee from "./Employee/AddEmployee";
 import RemoveEmployee from "./Employee/RemoveEmployee";
 import PresentEmployee from "./Employee/PresentEmployee";
@@ -11,6 +13,18 @@ const EmployeeManagement = () => {
   const [presentEmployee, setPresentEmployee] = useState(false);
   const [seeAllEmployee, setSeeAllEmployee] = useState(false);
   const [markEmployee, setMarkEmployee] = useState(false);
+
+  const token = useSelector((store) => store.auth.token);
+  if (token === null) {
+    return (
+      <div className="flex-row">
+        <h1>It seems that your are not logged in!</h1>
+        <Link to={"/auth"} className="nav-btn">
+          Head over here to Login
+        </Link>
+      </div>
+    );
+  }
 
   const handleAddClick = () => {
     setAddEmployee(!addEmployee);

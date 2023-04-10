@@ -17,7 +17,7 @@ Clone this repo
 
 ```bash
   git clone https://github.com/Siddharth189/hms-se-lab
-  cd hoteltaj/
+  cd hms-se-lab/
   cd server/
   npm install
   npx nodemon server.js

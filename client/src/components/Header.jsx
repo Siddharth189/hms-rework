@@ -23,8 +23,8 @@ const Header = () => {
     // dispatch(clearBookings());
     dispatch(logout());
   };
-  const handleSearch = (searchText) => {
-    // build this functionality where it shows the room according to the search like price less than that or type
+  const handleSearch = () => {
+    console.log("Search Text => ", searchText);
   };
 
   return (
@@ -42,13 +42,7 @@ const Header = () => {
             setSearchText(e.target.value);
           }}
         />
-        <button
-          className="search-btn"
-          onClick={() => {
-            const data = filterData(searchText, allRooms);
-            setFilteredRestraunts(data);
-          }}
-        >
+        <button className="search-btn" onClick={() => handleSearch()}>
           <FaSearch />
         </button>
       </div>

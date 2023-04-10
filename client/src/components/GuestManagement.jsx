@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import CreateGuestForm from "./Guest/CreateGuestForm";
 import RemoveGuestForm from "./Guest/RemoveGuestForm";
 import UpdateGuestForm from "./Guest/UpdateGuestForm";
@@ -7,6 +9,18 @@ const GuestManagement = () => {
   const [createGuest, setCreateGuest] = useState(false);
   const [removeGuest, setRemoveGuest] = useState(false);
   const [updateGuest, setUpdateGuest] = useState(false);
+
+  const token = useSelector((store) => store.auth.token);
+  if (token === null) {
+    return (
+      <div className="flex-row">
+        <h1>It seems that your are not logged in!</h1>
+        <Link to={"/auth"} className="nav-btn">
+          Head over here to Login
+        </Link>
+      </div>
+    );
+  }
 
   const handleCreateGuestClick = () => {
     setCreateGuest(!createGuest);

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import CreateBookingForm from "./Reservation/CreateBookingForm";
 import CancelBookingForm from "./Reservation/CancleBookingForm";
 import UpdateBookingForm from "./Reservation/UpdateBookingForm";
@@ -8,6 +10,18 @@ const ReservationManagement = () => {
   const [cancleBooking, setCancleBooking] = useState(false);
   const [updateBooking, setUpdateBooking] = useState(false);
   const [getAllBookings, setGetAllBookings] = useState(false);
+
+  const token = useSelector((store) => store.auth.token);
+  if (token === null) {
+    return (
+      <div className="flex-row">
+        <h1>It seems that your are not logged in!</h1>
+        <Link to={"/auth"} className="nav-btn">
+          Head over here to Login
+        </Link>
+      </div>
+    );
+  }
 
   const handleCreateBookingClick = () => {
     setCreateBooking(!createBooking);

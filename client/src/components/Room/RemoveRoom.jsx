@@ -39,7 +39,7 @@ const RemoveRoom = () => {
   return (
     <div className="register">
       <form onSubmit={formik.handleSubmit} className="form">
-        <h2>REMOVE EMPLOYEE</h2>
+        <h2>REMOVE A ROOM</h2>
         <input
           id="id"
           name="id"

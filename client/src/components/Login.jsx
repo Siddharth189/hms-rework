@@ -41,9 +41,16 @@ const Login = () => {
     },
     validate,
     onSubmit: async (values) => {
-      const token = await loginUser(values);
-      dispatch(login(JSON.stringify(token)));
-      console.log("Login => ", JSON.stringify(token));
+      try {
+        const token = await loginUser(values);
+        console.log("Login => ", JSON.stringify(token));
+        console.log("Login message => ", token.message);
+        console.log("Login user => ", token.user);
+        if (token.user !== undefined) dispatch(login(JSON.stringify(token)));
+        else alert(token.message);
+      } catch (error) {
+        alert(error);
+      }
     },
   });
   return (
