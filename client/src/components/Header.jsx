@@ -32,7 +32,7 @@ const Header = () => {
       <Link to={"/"}>
         <img className="logo" src={LOGO} />
       </Link>
-      <div className="search">
+      {/* <div className="search">
         <input
           type="text"
           className="search-input"
@@ -45,7 +45,7 @@ const Header = () => {
         <button className="search-btn" onClick={() => handleSearch()}>
           <FaSearch />
         </button>
-      </div>
+      </div> */}
       <ul className="nav">
         <li>
           <Link to={"/cart"}>Cart - {bookingItems?.length}</Link>

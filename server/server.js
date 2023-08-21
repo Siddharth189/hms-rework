@@ -379,6 +379,10 @@ app.post("/update-booking", async (req, res) => {
   }
 });
 
+// route included
+// Api for payment
+app.use("/payment", require("./payment"));
+
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });

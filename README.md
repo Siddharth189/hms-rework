@@ -4,12 +4,15 @@ The complete automation product for hotels
 
 ## Screenshots
 
-![Home](https://i.postimg.cc/DWdVmxRk/Screenshot-20230409-201118.png)
-![Home](https://i.postimg.cc/CzZWbh94/Screenshot-20230409-201155.png)
-![Home](https://i.postimg.cc/c6Jq4Mm2/Screenshot-20230409-201251.png)
-![Home](https://i.postimg.cc/ykw2jqHC/Screenshot-20230409-201415.png)
-![Home](https://i.postimg.cc/K1Bws9Gk/Screenshot-20230409-201443.png)
-![Home](https://i.postimg.cc/V5ZxSrZ6/Screenshot-20230409-201529.png)
+![Home Page](https://github.com/Siddharth189/hms-rework/blob/main/screenshots/homepage.png)
+![AUth Page](https://github.com/Siddharth189/hms-rework/blob/main/screenshots/auth.png)
+![Rooms](https://github.com/Siddharth189/hms-rework/blob/main/screenshots/rooms.png)
+![Cart](https://github.com/Siddharth189/hms-rework/blob/main/screenshots/cart.png)
+![Admin](https://github.com/Siddharth189/hms-rework/blob/main/screenshots/admin.png)
+![Guest Management Page](https://github.com/Siddharth189/hms-rework/blob/main/screenshots/guest.png)
+![User Page](https://github.com/Siddharth189/hms-rework/blob/main/screenshots/guestpage.png)
+![Payment](https://github.com/Siddharth189/hms-rework/blob/main/screenshots/payment.png)
+![DB in MongoDB Atlas](https://github.com/Siddharth189/hms-rework/blob/main/screenshots/db.png)
 
 ## Installation
 

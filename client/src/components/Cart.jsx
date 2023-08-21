@@ -17,8 +17,11 @@ const Cart = () => {
 
   const pushCartToDatabase = usePushBookingsToDatabase();
 
+  let cost = useTotalCost();
+
   const handleCheckOut = async () => {
-    const paymentDone = usePayment();
+    const paymentDone = await usePayment();
+    console.log("Payment Done => ", paymentDone);
     if (paymentDone === true) {
       const success = await pushCartToDatabase();
       if (success) {
@@ -41,8 +44,6 @@ const Cart = () => {
     );
   }
 
-  let cost = useTotalCost();
-
   return (
     <div className="cart">
       <h1>
@@ -61,8 +62,6 @@ const Cart = () => {
         </div>
       ) : (
         bookedItems.map((item, index) => {
-          cost += item.price;
-          console.log(item);
           return <CartItemCard key={item.userId + item.roomId} {...item} />;
         })
       )}
